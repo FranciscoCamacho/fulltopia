@@ -143,7 +143,7 @@ class photocompDB extends BaseController{
 
 
 
-	if (Input::hasFile('profilePic'))
+			if (Input::hasFile('profilePic'))
 			{
 				if (Input::file('profilePic')->isValid())
 				{
@@ -151,7 +151,7 @@ class photocompDB extends BaseController{
 					$extension = $file->getClientOriginalExtension();
 					$fileName=$maxUserID.'.'.$extension;
 					$photo_url='post/profile_pic/'.$fileName;
-					$result=Input::file('test')->move('post/profile_pic', $fileName);
+					$result=Input::file('profilePic')->move('post/profile_pic', $fileName);
 				}
 			}else{
 				//echo 'Error!';	
