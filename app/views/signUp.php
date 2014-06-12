@@ -49,22 +49,29 @@
 
 					<form class="form-horizontal" role="form" method="post" action="signUp">
 						<div class="form-group">
-							 <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
-							<div class="col-sm-10">
+							 <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
+							<div class="col-sm-8">
 								<input type="text" name="email" class="form-control" id="" />
 							</div>
 						</div>
 						
 						<div class="form-group">
-							 <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
-							<div class="col-sm-10">
+							 <label for="inputPassword3" class="col-sm-4 control-label">Password</label>
+							<div class="col-sm-8">
 								<input type="password" name="password" class="form-control" id="" />
+							</div>
+						</div>
+						
+						<div class="form-group">
+							 <label for="inputPassword3" class="col-sm-4 control-label">Upload your profile</label>
+							<div class="col-sm-8">
+								<input type="file" name="profilePic" class="" id="" />
 							</div>
 						</div>
 					
 						
 						<div class="form-group">
-							<div class="col-sm-offset-2 col-sm-10">
+							<div class="col-sm-offset-4 col-sm-8">
 								 <button type="submit" class="btn btn-info">Sign Up</button>
 							</div>
 						</div>

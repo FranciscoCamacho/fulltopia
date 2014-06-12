@@ -137,10 +137,30 @@ class photocompDB extends BaseController{
 	
 	$name =	Input::get('email');
 	$hashedPW = Hash::make(Input::get('password'));
-	DB::insert('insert into users (email, password) values (?, ?)', array($name, $hashedPW));	
+
+	$maxUserID=DB::table('users')->MAX('user_id');
+	$maxUserID=$maxUserID+1;
+
+
+
+	if (Input::hasFile('profilePic'))
+			{
+				if (Input::file('profilePic')->isValid())
+				{
+					$file = Input::file('profilePic');
+					$extension = $file->getClientOriginalExtension();
+					$fileName=$maxUserID.'.'.$extension;
+					$photo_url='post/profile_pic/'.$fileName;
+					$result=Input::file('test')->move('post/profile_pic', $fileName);
+				}
+			}else{
+				//echo 'Error!';	
+				$photo_url='';
+			}
+
+	DB::insert('insert into users (email, password,profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
 	
-	
-	
+
 	return Redirect::intended('LoginPage');
 	
 	
