@@ -158,7 +158,7 @@ class photocompDB extends BaseController{
 				$photo_url='';
 			}
 
-	DB::insert('insert into users (email, password,profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
+	DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
 	
 
 	return Redirect::intended('LoginPage');
