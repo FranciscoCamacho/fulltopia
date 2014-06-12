@@ -136,7 +136,10 @@ class Posts extends BaseController{
 			//echo $status;
 			//echo $postID;
 			
-			DB::table('posts_DB')->where('post_id', $postID)->update(array('status' => $status,'points' => $points ));
+			$recordString = DB::table('posts_DB')->where('post_id', $postID)->first();
+			$recordString->points=$points+$recordString->points;
+			
+			DB::table('posts_DB')->where('post_id', $postID)->update(array('status' => $status,'points' => $recordString->points));
 			$this->updateRatedPostsByUsers($postID);
 			
 			return Redirect::intended('user_posts');
