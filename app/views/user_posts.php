@@ -101,13 +101,13 @@
 
 
       <!-- Unnamed (Text Field) -->
-      <div id="u15" class="ax_text_field">
-        <input id="u15_input" type="text" value="'.$eachUser->post_title.'" />
+      <div id="u15" class="ax_text_field" >
+        <input id="u15_input" type="text" disabled="disabled" value="'.$eachUser->post_title.'" />
       </div>
 
       <!-- Unnamed (Text Field) -->
       <div id="u16" class="ax_text_field">
-        <textarea id="u16_input" type="text" value=""/>'.$eachUser->message.'</textarea> 
+        <textarea id="u16_input" type="text"  disabled="disabled" value=""/>'.$eachUser->message.'</textarea> 
       </div>
    
 		
