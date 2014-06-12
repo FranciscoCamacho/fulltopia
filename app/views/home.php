@@ -170,7 +170,7 @@ Ecology: <?php echo $ecology; ?></h6>
 
       <!-- Unnamed (Flow Shape) -->
       <div id="u9" class="ax_flow_shape">
-       <iframe  frameBorder="0" src="http://tunnel.banff.org/fulltopia/public/user_posts" width="530" height="557" scrolling="yes" onload='javascript:resizeIframe(this);'></iframe>
+       <iframe  frameBorder="0" src="http://tunnel.banff.org/fulltopia/user_posts" width="530" height="557" scrolling="yes" onload='javascript:resizeIframe(this);'></iframe>
         <!-- Unnamed () -->
         <div id="u10" class="text">
           <p><span>&nbsp;</span></p>
@@ -180,7 +180,7 @@ Ecology: <?php echo $ecology; ?></h6>
       <!-- Unnamed (Flow Shape) -->
       <div id="u11" class="ax_flow_shape">
 		<!--         <img id="u11_img" class="img " src="images/home/u9.png"/> -->
-        <iframe  frameBorder="0" src="http://tunnel.banff.org/fulltopia/public/user_posts_submit" width="530" height="557"></iframe>
+        <iframe  frameBorder="0" src="http://tunnel.banff.org/fulltopia/user_posts_submit" width="530" height="557"></iframe>
         
         <!-- Unnamed () -->
         <div id="u12" class="text">
