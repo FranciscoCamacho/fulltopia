@@ -53,10 +53,19 @@
   
   
 <?php
+
+	$postRated;
+	$postID;
   foreach ($allPostsContainer as $eachUser){
 	// var_dump($eachUser->message);
 		//var_dump($eachUser->post_id);
 		//$u_message=$eachUser->message;
+		
+		$postID=$eachUser->post_id;
+		//echo $postID;
+		//var_dump($ratedPostArray);
+		$postRated=$ratedPostArray[$postID];
+		
 					
 		echo '
 		
@@ -111,7 +120,11 @@
 		
 
       
-      
+      	';
+      	
+      	
+  	if(!$postRated){
+      	echo '
       
       
 <form role="form" method="post" action="ratePosts" enctype="multipart/form-data">   
@@ -200,15 +213,10 @@
 
 		
 	 </div>	
-		
-		
-		
-		
-		
-		
-		
+
+
 		';
-		
+		}
 		
 		
 		

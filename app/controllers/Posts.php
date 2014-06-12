@@ -84,16 +84,29 @@ class Posts extends BaseController{
 		$postsContainer=array();
 		$postsContainer = DB::table('posts_DB')->orderBy('post_id', 'desc')->get();
 
-
+		//$this->checkRatedPostsByUsers($eachPost->post_id);
 		
-		return View:: make('user_posts')->with('allPostsContainer', $postsContainer);
+		$var;
+		$check=true;
+		
+		$ratedArray=array();
+		
+		foreach($postsContainer as $eachPost){
+		
+			$var=$eachPost->post_id;
+			//echo $var.'<br/>';
+			
+				$check=$this->checkRatedPostsByUsers($var);
+				$ratedArray[$var]=$check;
+		}
+			return View:: make('user_posts')->with('allPostsContainer', $postsContainer)->with('ratedPostArray',$ratedArray);
 
 		}
 	
 	
 	
 	
-		public function ratePost(){ 
+			public function ratePost(){ 
 					//////////
 			$enviroment=Input::get('enviroment')."";
 			$activism=Input::get('activism')."";
@@ -124,31 +137,65 @@ class Posts extends BaseController{
 			//echo $postID;
 			
 			DB::table('posts_DB')->where('post_id', $postID)->update(array('status' => $status,'points' => $points ));
+			$this->updateRatedPostsByUsers($postID);
+			
 			return Redirect::intended('user_posts');
 			
 			}
-	
-	
-	
-	
-	
+
 			public function updateRatedPostsByUsers($postID){ 
-				$author_id=Session::get('userID');	
 				
-				
-				$ratedUsers = DB::table('posts_DB')->orderBy('post_id', 'desc')->get();
-				
-					$str = (string)($author_id);
-					
-					$str=$str.'.';
-					$result= substr($str,0,strrpos($str,'_'));
-					
-					
-			DB::table('posts_DB')->where('post_id', $postID)->update(array('user_rated' => $XXXX));
+					$author_id=Session::get('userID');	
+					//echo $author_id;
 			
-			
-			
+					$recordString = DB::table('posts_DB')->where('post_id', $postID)->first();
+					//$recordString = DB::table('posts_DB')->where('post_id', $postID)->get();
+					//echo $recordString->user_rated;
+					$recordString->user_rated=$recordString->user_rated.'.'.$author_id;
+					//echo '<br/>';
+					//echo $recordString->user_rated;
+					DB::table('posts_DB')->where('post_id', $postID)->update(array('user_rated' => $recordString->user_rated));
+
 			}
+			
+			
+			public function checkRatedPostsByUsers($postID){ 
+			
+					$countOfRat=0;
+				
+					//$author_id=Session::get('userID');	
+					//echo $author_id;
+			
+					$recordString = DB::table('posts_DB')->where('post_id', $postID)->first();
+					//$recordString = DB::table('posts_DB')->where('post_id', $postID)->get();
+					//echo $recordString->user_rated;
+					//$recordString->user_rated=$recordString->user_rated.'.'.$author_id;
+					//echo '<br/>';
+					//echo $recordString->user_rated;
+					
+					
+					$subStringArray = explode('.', $recordString->user_rated);
+					$author_id=Session::get('userID');
+					$userIsRated=false;
+					
+					
+					
+					foreach($subStringArray as $item){
+					
+						if($item==$author_id){
+							$userIsRated=true;
+						}
+					}
+					
+					
+				
+					return $userIsRated;
+					//return true;
+			}
+			
+			
+			
+			
 	
 }
 
