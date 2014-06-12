@@ -65,7 +65,7 @@
 						<div class="form-group">
 							 <label for="inputPassword3" class="col-sm-4 control-label">Upload your profile</label>
 							<div class="col-sm-8">
-								<input type="file" name="myprofilePic">
+								<input type="file" name="myprofilePic"/>
 							</div>
 						</div>
 					
