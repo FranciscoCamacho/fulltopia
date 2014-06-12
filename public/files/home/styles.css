@@ -64,6 +64,20 @@
   width:100px;
   height:95px;
 }
+
+
+#userName{
+  position:absolute;
+  left:1068px;
+  top:120px;
+  width:100px;
+  height:95px;
+  font-weight:bold;
+}
+
+
+
+
 #u4_img {
   position:absolute;
   left:0px;

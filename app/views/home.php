@@ -95,6 +95,13 @@ Ecology: <?php echo $ecology; ?></h6>
   
   
     <div id="base" class="">
+    
+    
+    <div id='userName' >
+    	<?php echo ucfirst($Name); ?>
+    </div>
+    
+    
 
       <!-- Unnamed (Shape) -->
       <div id="u0" class="ax_shape">
