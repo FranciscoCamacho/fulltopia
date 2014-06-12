@@ -47,7 +47,7 @@
 				<div class="col-md-6 column">
 				<div class="form-group">
 
-					<form class="form-horizontal" role="form" method="post" action="signUp">
+					<form class="form-horizontal" role="form" method="post" action="signUp" enctype="multipart/form-data">
 						<div class="form-group">
 							 <label for="inputEmail3" class="col-sm-4 control-label">Email</label>
 							<div class="col-sm-8">
@@ -65,7 +65,7 @@
 						<div class="form-group">
 							 <label for="inputPassword3" class="col-sm-4 control-label">Upload your profile</label>
 							<div class="col-sm-8">
-								<input type="file" name="myprofilePic" class="form-control" id="" />
+								<input type="file" name="myprofilePic">
 							</div>
 						</div>
 					
