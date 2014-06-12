@@ -56,6 +56,8 @@
 
 	$postRated;
 	$postID;
+	
+	
   foreach ($allPostsContainer as $eachUser){
 	// var_dump($eachUser->message);
 		//var_dump($eachUser->post_id);
@@ -65,7 +67,7 @@
 		//echo $postID;
 		//var_dump($ratedPostArray);
 		$postRated=$ratedPostArray[$postID];
-		
+		//echo $eachUser->points;
 					
 		echo '
 		
@@ -96,14 +98,7 @@
 
 
 
-      <!-- Unnamed (Shape) -->
-      <div id="u13" class="ax_paragraph">
-        <img id="u13_img" class="img " src="resources/images/transparent.gif"/>
-        <!-- Unnamed () -->
-        <div id="u14" class="text">
-          <p><span>Give Points:</span></p>
-        </div>
-      </div>
+
 
       <!-- Unnamed (Text Field) -->
       <div id="u15" class="ax_text_field">
@@ -138,6 +133,20 @@
         </label>
         <input id="u2_input" type="radio" value="1" name="enviroment"/>
       </div>
+
+
+
+
+      <!-- Unnamed (Shape) -->
+      <div id="u13" class="ax_paragraph">
+        <img id="u13_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u14" class="text">
+          <p><span>Give Points: </span></p>
+        </div>
+      </div>
+
+
 
 
 
@@ -216,6 +225,20 @@
 
 
 		';
+		}else{ echo '
+		
+		
+		      <!-- Unnamed (Shape) -->
+      <div id="u13" class="ax_paragraph">
+        <img id="u13_img" class="img " src="resources/images/transparent.gif"/>
+        <!-- Unnamed () -->
+        <div id="u14" class="text">
+          <p><span>Total Points: </span>'.$eachUser->points.'</p>
+        </div>
+      </div>
+		
+		';
+		
 		}
 		
 		
