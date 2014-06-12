@@ -73,7 +73,7 @@
 						<div class="form-group">
 							<div class="col-sm-offset-2 col-sm-10">
 								 <button type="submit" class="btn btn-success">Sign In</button>
-								                <a href="http://localhost/laraveltest/francisco/public/signUp" class="btn btn-success">
+								                <a href="http://localhost/laraveltest/fulltopia/public/signUp" class="btn btn-success">
 													Sign Up
 												</a>
 							</div>

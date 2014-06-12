@@ -54,14 +54,26 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'photocompDB',
-			'username'  => 'root',
-			'password'  => '',
+			'host'      => 'tunnel.banff.org',
+			'database'  => 'fulltopia',
+			'username'  => 'dbuser',
+			'password'  => 'fmc0ll4b',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
 		),
+		
+// 		'mysql' => array(
+// 			'driver'    => 'mysql',
+// 			'host'      => 'localhost',
+// 			'database'  => 'photocompDB',
+// 			'username'  => 'root',
+// 			'password'  => '',
+// 			'charset'   => 'utf8',
+// 			'collation' => 'utf8_unicode_ci',
+// 			'prefix'    => '',
+// 		),
+
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',
