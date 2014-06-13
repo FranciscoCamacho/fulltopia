@@ -147,52 +147,44 @@ class photocompDB extends BaseController{
 
 	$existUser = DB::table('users')->where('email', $name)->first();
 
-	var_dump($existUser);
+	// var_dump($existUser);
 
 
-	echo '<br/>';
+	// echo '<br/>';
 
 
-	if($existUser!==NULL){
-		echo '<br/>'.$existUser->email;
-	}else{
-		echo '<br/>'.'No user';
+	// if($existUser!==NULL){
+	// 	echo '<br/>'.$existUser->email;
+	// }else{
+	// 	echo '<br/>'.'No user';
 
-	}
+	// }
 	
 
-		// if($existUser->email!=NULL){
+		if($existUser!==NULL){
+				if (Input::hasFile('myprofilePic'))
+				{
+					if (Input::file('myprofilePic')->isValid())
+					{
+						$file = Input::file('myprofilePic');
+						$extension = $file->getClientOriginalExtension();
+						$fileName=$maxUserID.'.'.$extension;
+						$photo_url='post/profile_pic/'.$fileName;
+						$result=Input::file('myprofilePic')->move('post/profile_pic', $fileName);
+
+					DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
+					return Redirect::intended('LoginPage');
+					}
 
 
-		// 		if (Input::hasFile('myprofilePic'))
-		// 		{
-		// 			if (Input::file('myprofilePic')->isValid())
-		// 			{
-		// 				$file = Input::file('myprofilePic');
-		// 				$extension = $file->getClientOriginalExtension();
-		// 				$fileName=$maxUserID.'.'.$extension;
-		// 				$photo_url='post/profile_pic/'.$fileName;
-		// 				$result=Input::file('myprofilePic')->move('post/profile_pic', $fileName);
-
-		// 			DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
-		// 			return Redirect::intended('LoginPage');
-		// 			}
-
-
-		// 		}else{
-		// 			//echo 'Error!';	
-		// 			$photo_url='';
-		// 			return Redirect::intended('signUp');
-		// 		}
-
-
-
-
-		// }esle{
-
-		// 	return Redirect::intended('signUp');
-
-		// }
+				}else{
+					//echo 'Error!';	
+					$photo_url='';
+					return Redirect::intended('signUp');
+				}
+		}esle{
+			return Redirect::intended('signUp');
+		}
 			
 	
 	}
