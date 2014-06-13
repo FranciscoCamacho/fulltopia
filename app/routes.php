@@ -40,6 +40,7 @@ Route::get('HomePage', function(){
 	return View:: make('home');
 });
 
+
 Route::any('my_actions', function(){
 	$userData= App::make('photocompDB')->getAllUserData();
 
@@ -48,6 +49,10 @@ Route::any('my_actions', function(){
 	//return View:: make('my_actions');
 });
 
+
+
+
+
 Route::any('user_posts_submit', function(){
 	$userData= App::make('photocompDB')->getAllUserData();
 
@@ -55,6 +60,12 @@ Route::any('user_posts_submit', function(){
 
 	//return View:: make('my_actions');
 });
+
+
+
+
+
+
 
 
 Route::get('home', function(){
