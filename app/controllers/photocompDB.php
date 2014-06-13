@@ -145,6 +145,10 @@ class photocompDB extends BaseController{
 	$maxUserID=$maxUserID+1;
 
 
+	$existUser = DB::table('users')->where('email', $name)->first();
+
+	if($existUser!=NULL){
+
 
 			if (Input::hasFile('myprofilePic'))
 			{
@@ -155,18 +159,27 @@ class photocompDB extends BaseController{
 					$fileName=$maxUserID.'.'.$extension;
 					$photo_url='post/profile_pic/'.$fileName;
 					$result=Input::file('myprofilePic')->move('post/profile_pic', $fileName);
+
+				DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
+				return Redirect::intended('LoginPage');
 				}
+
+
 			}else{
 				//echo 'Error!';	
 				$photo_url='';
+				return Redirect::intended('signUp');
 			}
 
-	DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
-	
 
-	return Redirect::intended('LoginPage');
-	
-	
+
+
+			}esle{
+
+				return Redirect::intended('signUp');
+
+			}
+			
 	
 	}
 	
