@@ -244,6 +244,22 @@ textarea{ resize:none }
   text-align:left;
 }
 
+#time_Stamp {
+  position:absolute;
+  left:410px;
+  top:10px;
+    font-family:'ArialMT', 'Arial';
+ text-transform:capitalize;
+  font-style:normal;
+  font-weight:bold;
+  font-size:13px;
+  text-decoration:none;
+  color:#000000;
+  text-align:left;
+}
+
+
+
 
 
 

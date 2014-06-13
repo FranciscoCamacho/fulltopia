@@ -133,6 +133,9 @@ class photocompDB extends BaseController{
 	}
 	
 	
+	
+	
+	
 	public function signUp(){
 	
 	$name =	Input::get('email');

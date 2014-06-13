@@ -95,6 +95,13 @@
 			<A>'.$eachUser->author_name.'</A>
 		</div>
 
+
+
+     <div id="time_Stamp" class="ax_text_field">
+      <A>'.$eachUser->post_submit_date.'</A>
+    </div>
+
+
 			
 		
       <!-- Unnamed (Shape) -->
