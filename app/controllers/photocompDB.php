@@ -153,7 +153,7 @@ class photocompDB extends BaseController{
 	// echo '<br/>';
 
 
-	if($existUser!==NULL){
+	if($existUser!=NULL){
 		echo '<br/>'.$existUser->email;
 	}else{
 		echo '<br/>'.'No user';
