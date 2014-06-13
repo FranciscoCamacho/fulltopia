@@ -161,7 +161,7 @@ class photocompDB extends BaseController{
 	// }
 	
 
-		if($existUser!=NULL){
+		if($existUser!==NULL){
 				if (Input::hasFile('myprofilePic'))
 				{
 					if (Input::file('myprofilePic')->isValid())
