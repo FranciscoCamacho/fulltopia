@@ -161,7 +161,7 @@ class photocompDB extends BaseController{
 	}
 	
 
-		if($existUser!=NULL){
+		if($existUser==NULL){
 				if (Input::hasFile('myprofilePic')){
 					if (Input::file('myprofilePic')->isValid()){
 						$file = Input::file('myprofilePic');
@@ -177,14 +177,14 @@ class photocompDB extends BaseController{
 				}else{
 					//echo 'Error!';	
 					$photo_url='';
-					//return Redirect::intended('signUp');
-					echo '<br/>'.'No profile Pic';
+					return Redirect::intended('signUp');
+					//echo '<br/>'.'No profile Pic';
 				}
 
 
 		}else{
-			//return Redirect::intended('signUp');
-			echo '<br/>'.'User exists';
+			return Redirect::intended('signUp');
+			//echo '<br/>'.'User exists';
 		}
 		
 
