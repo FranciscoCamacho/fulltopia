@@ -42,7 +42,6 @@ class Posts extends BaseController{
  
 					// move uploaded file to public/uploads
 					//Input::upload('test', 'post/post_photos/', $filename);
-
 				}
 
 			}else{
