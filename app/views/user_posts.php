@@ -97,7 +97,7 @@
 
 
 
-     <div id="time_Stamp" class="ax_text_field">
+     <div id="time_Stamp" class="">
       <A>'.$eachUser->post_submit_date.'</A>
     </div>
 

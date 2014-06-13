@@ -246,8 +246,9 @@ textarea{ resize:none }
 
 #time_Stamp {
   position:absolute;
-  right:0px;
+  left:400px;
   top:10px;
+  width:100px;
     font-family:'ArialMT', 'Arial';
  text-transform:capitalize;
   font-style:normal;
@@ -255,8 +256,7 @@ textarea{ resize:none }
   font-size:13px;
   text-decoration:none;
   color:#000000;
-  text-align:right;
-
+  text-align:left;
 }
 
 
