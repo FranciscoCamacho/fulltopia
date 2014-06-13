@@ -3,6 +3,11 @@ Route::get('/', function(){
 		return View:: make('LoginPage');
 });
 
+Route::get('signUp', function(){
+	return View:: make('signUp');
+});
+
+
 Route::post('login','photocompDB@login');
 Route::post('signUp','photocompDB@signUp');
 
@@ -25,9 +30,7 @@ Route::get('dashboard', function(){
 	echo 'Loginned';
 });
 
-Route::get('signUp', function(){
-	return View:: make('signUp');
-});
+
 
 Route::get('LoginPage', function(){
 	return View:: make('LoginPage');

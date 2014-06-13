@@ -147,8 +147,8 @@ class photocompDB extends BaseController{
 
 	$existUser = DB::table('users')->where('email', $name)->first();
 
-	echo $existUser;
-		if($existUser!=NULL){
+	//echo $existUser;
+		if($existUser->email!=NULL){
 
 
 				if (Input::hasFile('myprofilePic'))
