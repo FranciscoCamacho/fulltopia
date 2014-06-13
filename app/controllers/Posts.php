@@ -32,17 +32,17 @@ class Posts extends BaseController{
 					 $file = Input::file('test');
 					 $extension = $file->getClientOriginalExtension();
 					 $fileName=$maxPhotoID.'.'.$extension;
+
 					 $photo_url='post/post_photos/'.$fileName;
 					// $result=Input::file('test')->move('post/post_photos', $fileName);
 					/////
 					//$img = Input::file('test');
 					$success = Resizer::open($file)
 					->resize(480 ,260, 'auto' )
-					->save( $fileName , 95 );
+					->save( 'post/post_photos/'.$fileName , 90 );
  
 					// move uploaded file to public/uploads
-					Input::upload('test', 'post/post_photos/', $filename);
-
+					//Input::upload('test', 'post/post_photos/', $filename);
 
 				}
 
