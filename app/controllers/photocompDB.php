@@ -148,8 +148,18 @@ class photocompDB extends BaseController{
 	$existUser = DB::table('users')->where('email', $name)->first();
 
 	var_dump($existUser);
-	echo '<br/>'.$existUser;
-	echo '<br/>'.$existUser->email;
+
+
+	echo '<br/>';
+
+
+	if($existUser!==NULL){
+		echo '<br/>'.$existUser->email;
+	}else{
+		echo '<br/>'.'No user';
+
+	}
+	
 
 		// if($existUser->email!=NULL){
 
