@@ -149,7 +149,7 @@ class photocompDB extends BaseController{
 
 	var_dump($existUser);
 	echo '<br/>'.$existUser;
-	echo '<br/>'.$existUser->'email';
+	echo '<br/>'.$existUser->email;
 
 		// if($existUser->email!=NULL){
 
