@@ -34,7 +34,7 @@ class Posts extends BaseController{
 					 $fileName=$maxPhotoID.'.'.$extension;
 
 				 	$photo_url='post/post_photos/'.$fileName;
-					$result=Input::file('test')->move('post/post_photos', $fileName);
+					//$result=Input::file('test')->move('post/post_photos', $fileName);
 					/////
 					//$img = Input::file('test');
 					
