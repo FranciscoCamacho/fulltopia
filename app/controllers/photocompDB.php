@@ -187,7 +187,8 @@ class photocompDB extends BaseController{
 	// 	}
 			
 	
-	// }
+	// 
+}
 	
 	
 	
