@@ -147,38 +147,39 @@ class photocompDB extends BaseController{
 
 	$existUser = DB::table('users')->where('email', $name)->first();
 
-	if($existUser!=NULL){
+	echo $existUser;
+		if($existUser!=NULL){
 
 
-			if (Input::hasFile('myprofilePic'))
-			{
-				if (Input::file('myprofilePic')->isValid())
+				if (Input::hasFile('myprofilePic'))
 				{
-					$file = Input::file('myprofilePic');
-					$extension = $file->getClientOriginalExtension();
-					$fileName=$maxUserID.'.'.$extension;
-					$photo_url='post/profile_pic/'.$fileName;
-					$result=Input::file('myprofilePic')->move('post/profile_pic', $fileName);
+					if (Input::file('myprofilePic')->isValid())
+					{
+						$file = Input::file('myprofilePic');
+						$extension = $file->getClientOriginalExtension();
+						$fileName=$maxUserID.'.'.$extension;
+						$photo_url='post/profile_pic/'.$fileName;
+						$result=Input::file('myprofilePic')->move('post/profile_pic', $fileName);
 
-				DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
-				return Redirect::intended('LoginPage');
+					DB::insert('insert into users (email, password, profile_pic) values (?, ?,?)', array($name, $hashedPW,$photo_url));	
+					return Redirect::intended('LoginPage');
+					}
+
+
+				}else{
+					//echo 'Error!';	
+					$photo_url='';
+					return Redirect::intended('signUp');
 				}
 
 
-			}else{
-				//echo 'Error!';	
-				$photo_url='';
-				return Redirect::intended('signUp');
-			}
 
 
+		}esle{
 
+			return Redirect::intended('signUp');
 
-			}esle{
-
-				return Redirect::intended('signUp');
-
-			}
+		}
 			
 	
 	}
